@@ -1,0 +1,8 @@
+version: "3.8"
+
+services:
+  # SERVICE DASH
+  dash:
+    build: ./app
+    ports:
+      - "8050:8050"
