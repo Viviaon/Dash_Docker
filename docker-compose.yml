@@ -3,6 +3,14 @@ version: "3.8"
 services:
   # SERVICE DASH
   dash:
-    build: ./app
+    build: 
+    # ./app
+      context: .
+    volumes: 
+      - ./app:/app
+    tty: true
     ports:
-      - "8050:8050"
+      # HTTP
+      - target: 8050
+        published: 8050
+        protocol: tcp
