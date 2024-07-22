@@ -9,8 +9,5 @@ services:
     volumes: 
       - ./app:/app
     tty: true
-    ports:
-      # HTTP
-      - target: 8050
-        published: 8050
-        protocol: tcp
+    ports: 
+      - "8050:8050"

@@ -7,7 +7,7 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # ETAPE 2 : COPIE DE TOUS LES FICHIERS DANS L'IMAGE
-COPY . /app
+COPY . /app /app
 
 
 # ETAPE 3 : INSTALLATION DES DEPENDANCES & MISE A JOUR DES PACKAGES
@@ -36,4 +36,6 @@ RUN apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* \ /var
 EXPOSE 8050
 
 # Lancer l'application Dash
-CMD ["python", "./app/my_app.py", "--host", "0.0.0.0", "--port", "8050"]
+CMD ["python3", "my_app.py"]
+
+# ENTRYPOINT ["dash", "run", "./app/my_app.py", "--server.port=8050", "--server.address=0.0.0.0"]
